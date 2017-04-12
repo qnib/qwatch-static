@@ -12,7 +12,7 @@ handler:
   es_log:
     host: "172.17.0.1"
     inputs: "id"
-    index-template: "log-2017-04-12"
+    index-template: "logs-2017-04-12"
   es_events:
     host: "172.17.0.1"
     inputs: "id"
