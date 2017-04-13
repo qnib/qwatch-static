@@ -7,13 +7,11 @@ collector:
     create: true
 filter:
   id:
-    inputs: "file"
+    inputs: "file,gelf"
 handler:
-  es_log:
+  es_logs:
     host: "172.17.0.1"
     inputs: "id"
-    index-template: "logs-2017-04-12"
   es_events:
     host: "172.17.0.1"
     inputs: "id"
-    index-template: "events-2017-04-12"

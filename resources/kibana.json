@@ -1,0 +1,95 @@
+[
+  {
+    "_id": "5bf0b3d0-2085-11e7-b40b-0d5db40bacb1",
+    "_type": "dashboard",
+    "_source": {
+      "title": "EventsDash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"size_x\":12,\"size_y\":3,\"panelIndex\":1,\"type\":\"visualization\",\"id\":\"4ddf0490-2085-11e7-b40b-0d5db40bacb1\",\"col\":1,\"row\":1},{\"size_x\":12,\"size_y\":3,\"panelIndex\":2,\"type\":\"search\",\"id\":\"359c89c0-2085-11e7-b40b-0d5db40bacb1\",\"col\":1,\"row\":4,\"columns\":[\"host\",\"source\",\"msg\"],\"sort\":[\"Timestamp\",\"desc\"]}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "955e3d90-2085-11e7-b40b-0d5db40bacb1",
+    "_type": "dashboard",
+    "_source": {
+      "title": "LogDash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"columns\":[\"host\",\"source\",\"msg\"],\"id\":\"7489b310-2085-11e7-b40b-0d5db40bacb1\",\"panelIndex\":2,\"row\":4,\"size_x\":12,\"size_y\":5,\"sort\":[\"Timestamp\",\"desc\"],\"type\":\"search\"},{\"size_x\":12,\"size_y\":3,\"panelIndex\":3,\"type\":\"visualization\",\"id\":\"797bbbd0-2089-11e7-b40b-0d5db40bacb1\",\"col\":1,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "359c89c0-2085-11e7-b40b-0d5db40bacb1",
+    "_type": "search",
+    "_source": {
+      "title": "EventsSearch",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "host",
+        "source",
+        "msg"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"events-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "7489b310-2085-11e7-b40b-0d5db40bacb1",
+    "_type": "search",
+    "_source": {
+      "title": "LogSearch",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "host",
+        "source",
+        "msg"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-*\",\"highlightAll\":true,\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "797bbbd0-2089-11e7-b40b-0d5db40bacb1",
+    "_type": "visualization",
+    "_source": {
+      "title": "LogVIs",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customInterval\":\"2h\",\"extended_bounds\":{},\"field\":\"Timestamp\",\"interval\":\"auto\",\"min_doc_count\":1},\"schema\":\"segment\",\"type\":\"date_histogram\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"legendPosition\":\"right\",\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"times\":[]},\"title\":\"LogVIs\",\"type\":\"histogram\"}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "description": "",
+      "savedSearchId": "7489b310-2085-11e7-b40b-0d5db40bacb1",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  }
+]
