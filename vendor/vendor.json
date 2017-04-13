@@ -82,6 +82,13 @@
 			"revisionTime": "2017-04-12T21:07:03Z"
 		},
 		{
+			"checksumSHA1": "Ffk/aKm28vFK8SuscR/DBxvSYWs=",
+			"origin": "github.com/qnib/qwatch-static/vendor/github.com/qnib/qframe-collector-gelf/lib",
+			"path": "github.com/qnib/qframe-collector-gelf/lib",
+			"revision": "ee73dc3db7cc165423e831fcfcbe8fe2172d7b8c",
+			"revisionTime": "2017-04-13T16:52:43Z"
+		},
+		{
 			"checksumSHA1": "tZtHbF7OtrukaYMelrZgVwZ0WFs=",
 			"path": "github.com/qnib/qframe-filter-id/lib",
 			"revision": "9aef6f10220534c20e9a1bdb4b51d69560230790",
@@ -109,11 +116,11 @@
 			"revisionTime": "2017-04-11T20:25:15Z"
 		},
 		{
-			"checksumSHA1": "IQL4WIi9zddDh6SrWCyznp4TBEc=",
+			"checksumSHA1": "sf9A+5UKtnSjJuVjUbm5ZVRkQ9c=",
 			"origin": "github.com/qnib/qwatch-static/vendor/github.com/qnib/qwatch-static",
 			"path": "github.com/qnib/qwatch-static",
-			"revision": "2ee74318cd51fd6e86a5ab07eb9ceae644b35e12",
-			"revisionTime": "2017-04-13T11:31:50Z"
+			"revision": "d3e4bcea5fc14c2fd8229d81cd17540e036eab7b",
+			"revisionTime": "2017-04-13T14:55:18Z"
 		},
 		{
 			"checksumSHA1": "m8hYD/alsufIYIM7sR06wbL+dKo=",

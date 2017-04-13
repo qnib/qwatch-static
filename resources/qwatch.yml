@@ -7,7 +7,7 @@ collector:
     create: true
 filter:
   id:
-    inputs: "file"
+    inputs: "file,gelf"
 handler:
   es_logs:
     inputs: "id"

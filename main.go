@@ -27,6 +27,7 @@ import (
 	"github.com/qnib/qframe-filter-id/lib"
 	"github.com/qnib/qframe-handler-elasticsearch/lib"
 	"github.com/qnib/qframe-collector-file/lib"
+	"github.com/qnib/qframe-collector-gelf/lib"
 )
 
 
@@ -63,6 +64,8 @@ func Run(ctx *cli.Context) {
 	//// Inputs
 	cf := qframe_collector_file.NewPlugin(qChan, *cfg, "file")
 	go cf.Run()
+	cg := qframe_collector_gelf.NewPlugin(qChan, *cfg, "gelf")
+	go cg.Run()
 	// Inserts tick to get Inventory started
 	var tickCnt int64
 	var endTick int64
