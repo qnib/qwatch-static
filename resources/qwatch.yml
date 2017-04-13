@@ -1,0 +1,15 @@
+ticker:
+    interval: 5000
+collector:
+  file:
+    path: "resources/stdout.log"
+    reopen: true
+    create: true
+filter:
+  id:
+    inputs: "file"
+handler:
+  es_logs:
+    inputs: "id"
+  es_events:
+    inputs: "id"

@@ -53,7 +53,7 @@ func Run(ctx *cli.Context) {
 	signal.Notify(qChan.Done, os.Interrupt)
 	// instanciate handlers,filters,collectors
 	//// Handlers
-	hEsLog := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_log")
+	hEsLog := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_logs")
 	go hEsLog.Run()
 	hEsEvents := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_events")
 	go hEsEvents.Run()
@@ -102,4 +102,3 @@ func main() {
 	app.Action = Run
 	app.Run(os.Args)
 }
-
