@@ -22,6 +22,11 @@ You can reach them under [http://localhost:9200/_cat/indices](http://localhost:9
 
 ```bash
 $ docker run -ti --name qwatch-static --rm -e SKIP_ENTRYPOINTS=1 \
+           -v $(pwd)/resources/bash_history:/root/.bash_history:ro \
+           -v ${GOPATH}/src/github.com/qnib/qframe-filter-grok:/usr/local/src/github.com/qnib/qframe-filter-grok \
+           -v ${GOPATH}/src/github.com/qnib/qframe-handler-elasticsearch:/usr/local/src/github.com/qnib/qframe-handler-elasticsearch \
+           -v ${GOPATH}/src/github.com/qnib/qframe-utils:/usr/local/src/github.com/qnib/qframe-utils \
+           -v ${GOPATH}/src/github.com/qnib/qframe-types:/usr/local/src/github.com/qnib/qframe-types \
            -v $(pwd):/usr/local/src/github.com/qnib/$(basename $(pwd)) \
            -w /usr/local/src/github.com/qnib/$(basename $(pwd)) qnib/uplain-golang bash
 root@b85f3383012a:/usr/local/src/github.com/qnib/qwatch-static# govendor list

@@ -1,0 +1,5 @@
+go run main.go --config resources/qwatch-container.yml
+govendor update github.com/qnib/qframe-handler-elasticsearch/lib
+govendor update github.com/qnib/qframe-filter-grok/lib
+govendor update github.com/qnib/qframe-types
+govendor update github.com/qnib/qframe-utils

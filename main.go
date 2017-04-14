@@ -24,9 +24,9 @@ import (
 	"github.com/codegangsta/cli"
 	"github.com/zpatrick/go-config"
 	"github.com/qnib/qframe-types"
-	"github.com/qnib/qframe-filter-id/lib"
+	"github.com/qnib/qframe-filter-grok/lib"
 	"github.com/qnib/qframe-handler-elasticsearch/lib"
-	"github.com/qnib/qframe-collector-file/lib"
+	//"github.com/qnib/qframe-collector-file/lib"
 	"github.com/qnib/qframe-collector-gelf/lib"
 )
 
@@ -45,8 +45,8 @@ func Run(ctx *cli.Context) {
 	// Create chan
 	qChan := qtypes.NewQChan()
 	// Create ticker
-	i, _ := cfg.Int("ticker.interval")
-	interval := time.Duration(i) * time.Millisecond
+	//i, _ := cfg.IntOr("ticker.interval", 3000)
+	interval := time.Duration(3000) * time.Millisecond
 	ticker := time.NewTicker(interval).C
 	// Create Broadcaster goroutine
 	qChan.Broadcast()
@@ -56,14 +56,20 @@ func Run(ctx *cli.Context) {
 	//// Handlers
 	hEsLog := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_logs")
 	go hEsLog.Run()
-	hEsEvents := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_events")
-	go hEsEvents.Run()
+	hEsMetrics := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_metrics")
+	go hEsMetrics.Run()
+	hee := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_events")
+	go hee.Run()
 	//// Filters
-	fi := qframe_filter_id.New(qChan, *cfg, "id")
-	go fi.Run()
+	fg, _ := qframe_filter_grok.New(qChan, *cfg, "log")
+	go fg.Run()
+	fgm, _ := qframe_filter_grok.New(qChan, *cfg, "metric")
+	go fgm.Run()
+	fge, _ := qframe_filter_grok.New(qChan, *cfg, "event")
+	go fge.Run()
 	//// Inputs
-	cf := qframe_collector_file.NewPlugin(qChan, *cfg, "file")
-	go cf.Run()
+	//cf := qframe_collector_file.NewPlugin(qChan, *cfg, "file")
+	//go cf.Run()
 	cg := qframe_collector_gelf.NewPlugin(qChan, *cfg, "gelf")
 	go cg.Run()
 	// Inserts tick to get Inventory started
