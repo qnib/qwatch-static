@@ -23,7 +23,9 @@ You can reach them under [http://localhost:9200/_cat/indices](http://localhost:9
 ```bash
 $ docker run -ti --name qwatch-static --rm -e SKIP_ENTRYPOINTS=1 \
            -v $(pwd)/resources/bash_history:/root/.bash_history:ro \
+           -v ${GOPATH}/src/github.com/qnib/qframe-collector-gelf:/usr/local/src/github.com/qnib/qframe-collector-gelf \
            -v ${GOPATH}/src/github.com/qnib/qframe-filter-grok:/usr/local/src/github.com/qnib/qframe-filter-grok \
+           -v ${GOPATH}/src/github.com/qnib/qframe-handler-influxdb:/usr/local/src/github.com/qnib/qframe-handler-influxdb \
            -v ${GOPATH}/src/github.com/qnib/qframe-handler-elasticsearch:/usr/local/src/github.com/qnib/qframe-handler-elasticsearch \
            -v ${GOPATH}/src/github.com/qnib/qframe-utils:/usr/local/src/github.com/qnib/qframe-utils \
            -v ${GOPATH}/src/github.com/qnib/qframe-types:/usr/local/src/github.com/qnib/qframe-types \

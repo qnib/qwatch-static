@@ -1,6 +1,6 @@
 version: '3'
 services:
-  backend:
+  elasticsearch:
     image: qnib/plain-elasticsearch
     ports:
       - "9200:9200"
@@ -10,9 +10,32 @@ services:
       ES_HEAP_MIN: "512m"
       ES_NODE_MASTER: "true"
       ES_NODE_DATA: "true"
-  frontend:
+  kibana:
     image: qnib/plain-kibana5
     ports:
       - "5601:5601"
     environment:
-        ES_MASTER_HOST: qwatch_backend
+        ES_MASTER_HOST: qwatch_elasticsearch
+  influxdb:
+    image: qnib/plain-influxdb
+    environment:
+     - INFLUXDB_DATABASES=qcollect
+     - INFLUXDB_META_LOGGING=true
+     - INFLUXDB_OPENTSDB_ENABLED=true
+     - INFLUXDB_GRAPHITE_ENABLED=true
+    volumes:
+     - /opt/influxdb/shared
+    ports:
+     - 2003:2003
+     - 4242:4242
+     - 8083:8083
+     - 8086:8086
+
+  frontend:
+    image: qnib/plain-grafana4
+    ports:
+     - 3000:3000
+    environment:
+     - QCOLLECT_HOST=http://qwatch_influxdb:8086
+    volumes:
+      - ./resources/grafana/sql/:/opt/grafana/sql

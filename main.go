@@ -28,6 +28,7 @@ import (
 	"github.com/qnib/qframe-handler-elasticsearch/lib"
 	//"github.com/qnib/qframe-collector-file/lib"
 	"github.com/qnib/qframe-collector-gelf/lib"
+	"github.com/qnib/qframe-handler-influxdb/lib"
 )
 
 
@@ -54,12 +55,10 @@ func Run(ctx *cli.Context) {
 	signal.Notify(qChan.Done, os.Interrupt)
 	// instanciate handlers,filters,collectors
 	//// Handlers
-	hEsLog := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_logs")
+	hEsLog := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_logstash")
 	go hEsLog.Run()
-	hEsMetrics := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_metrics")
-	go hEsMetrics.Run()
-	hee := qframe_handler_elasticsearch.NewElasticsearch(qChan, *cfg, "es_events")
-	go hee.Run()
+	hi, _ := qframe_handler_influxdb.New(qChan, *cfg, "influxdb")
+	go hi.Run()
 	//// Filters
 	fg, _ := qframe_filter_grok.New(qChan, *cfg, "log")
 	go fg.Run()

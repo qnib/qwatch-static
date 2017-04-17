@@ -1,6 +1,7 @@
 ticker:
   interval: 5000
-
+log:
+  level: "debug"
 collector:
   file:
     path: "resources/stdout.log"
@@ -12,7 +13,7 @@ collector:
 filter:
   metric:
     inputs: "gelf"
-    pattern: "put %{WORD:name} %{POSINT:time} %{BASE10NUM:value} %{GREEDYDATA:tags}"
+    pattern: "put %{WORD:name} %{POSINT:time} %{BASE10NUM:value}( %{GREEDYDATA:tags})?"
   event:
     inputs: "metric"
     source-success: false
@@ -23,12 +24,11 @@ filter:
     pattern: "%{GREEDYDATA:log_message}"
 
 handler:
-  es_logs:
+  es_logstash:
     host: "172.17.0.1"
-    inputs: "log"
-  es_metrics:
-    host: "172.17.0.1"
+    inputs: "log,event"
+  influxdb:
     inputs: "metric"
-  es_events:
+    database: "qcollect"
+    precision: "s"
     host: "172.17.0.1"
-    inputs: "event"
