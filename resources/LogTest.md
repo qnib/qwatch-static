@@ -137,9 +137,9 @@ $ go run main.go --config resources/qwatch-container.yml
 
 The logs/events can be view using kibana5:
 
-![](/Users/kniepbert/src/github.com/qnib/qwatch-static/resources/pics/kibana_search.png)
+![kibana](./pics/kibana_search.png)
 
 Metrics are graphed using grafana, which also annotates the graph with events/logs from elasticsearch.
 
-![logs](/Users/kniepbert/src/github.com/qnib/qwatch-static/resources/pics/grafana_logs.png)
-![events](/Users/kniepbert/src/github.com/qnib/qwatch-static/resources/pics/grafana_events.png)
+![logs](./pics/grafana_logs.png)
+![events](./pics/grafana_events.png)
