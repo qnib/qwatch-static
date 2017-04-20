@@ -1,15 +1,32 @@
 ticker:
-    interval: 5000
+  interval: 5000
+log:
+  level: "debug"
 collector:
   file:
     path: "resources/stdout.log"
     reopen: true
     create: true
+  gelf:
+    port: "12201"
+
 filter:
-  id:
-    inputs: "file,gelf"
+  metric:
+    inputs: "gelf"
+    pattern: "put %{WORD:name} %{POSINT:time} %{BASE10NUM:value}( %{GREEDYDATA:tags})?"
+  event:
+    inputs: "metric"
+    source-success: false
+    pattern: "cee%{GREEDYDATA:event_json}"
+  log:
+    inputs: "event"
+    source-success: false
+    pattern: "%{GREEDYDATA:log_message}"
+
 handler:
-  es_logs:
-    inputs: "id"
-  es_events:
-    inputs: "id"
+  es_logstash:
+    inputs: "log,event"
+  influxdb:
+    inputs: "metric"
+    database: "qcollect"
+    precision: "s"

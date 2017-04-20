@@ -1,0 +1,10 @@
+workspace:
+  base: /usr/local/src/
+  path: github.com/qnib/qwatch-static
+pipeline:
+  build:
+    image: qnib/uplain-golang
+    commands:
+     - govendor fetch +m
+     - govendor update +l
+     - govendor build -o resources/bin/qwatch-static
