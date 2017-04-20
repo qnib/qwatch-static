@@ -27,30 +27,6 @@
 			"revision": ""
 		},
 		{
-			"checksumSHA1": "JQP5xDlFbFT+PZT8Yk70J5tchUE=",
-			"path": "github.com/hpcloud/tail/ratelimiter",
-			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
-			"revisionTime": "2017-02-07T02:33:46Z"
-		},
-		{
-			"checksumSHA1": "0xM336Lb25URO/1W1/CtGoRygVU=",
-			"path": "github.com/hpcloud/tail/util",
-			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
-			"revisionTime": "2017-02-07T02:33:46Z"
-		},
-		{
-			"checksumSHA1": "yl5hPKT5X6MwsiaaZgPNNxn0Y64=",
-			"path": "github.com/hpcloud/tail/watch",
-			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
-			"revisionTime": "2017-02-07T02:33:46Z"
-		},
-		{
-			"checksumSHA1": "j65V4wnJboT4pfppNC/gjr2Gl+c=",
-			"path": "github.com/hpcloud/tail/winfile",
-			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
-			"revisionTime": "2017-02-07T02:33:46Z"
-		},
-		{
 			"checksumSHA1": "1kVa89e/yk8L2liYiFuJrNWiXfU=",
 			"path": "github.com/influxdata/influxdb/client/v2",
 			"revision": "31db9d6f468239346a1fe7464b5cf9c85580488f",
@@ -69,24 +45,16 @@
 			"revisionTime": "2017-04-13T18:30:30Z"
 		},
 		{
-			"path": "github.com/qnib/qframe-collector-file/lib",
-			"revision": ""
-		},
-		{
-			"checksumSHA1": "SdABt7LcQwXaaA1lOCDipi0v5bU=",
+			"checksumSHA1": "D9UZnbzvX8bPjOMaOQ6fPprTPpQ=",
 			"path": "github.com/qnib/qframe-collector-gelf/lib",
-			"revision": "8cc630662a75c99000cc5099e0b2122390c7781b",
-			"revisionTime": "2017-04-15T16:45:31Z"
+			"revision": "400219c1ba03b1bf45a7c189fe685cf405381087",
+			"revisionTime": "2017-04-20T10:40:00Z"
 		},
 		{
-			"checksumSHA1": "2yJTMHYN/4bhui2qdGezjHcRmLc=",
+			"checksumSHA1": "bD9HRUyhe6+L3xdXQMse+iOuMQo=",
 			"path": "github.com/qnib/qframe-filter-grok/lib",
-			"revision": "e240c91c04725d435d0e2f61b48b11aa71cfe4c3",
-			"revisionTime": "2017-04-15T16:58:34Z"
-		},
-		{
-			"path": "github.com/qnib/qframe-filter-id/lib",
-			"revision": ""
+			"revision": "b1d915d04594165aae3ad822f1e84d4fd757fb64",
+			"revisionTime": "2017-04-20T10:57:33Z"
 		},
 		{
 			"checksumSHA1": "A6X3UmGyyxR42yXzAYJoOgxFAG4=",
@@ -95,16 +63,16 @@
 			"revisionTime": "2017-04-17T09:21:48Z"
 		},
 		{
-			"checksumSHA1": "W3e7yjqAiOo2mLgqsNAcqnH+vCQ=",
+			"checksumSHA1": "HnBRNnNfokZZCjXPVTfKBfEgCRA=",
 			"path": "github.com/qnib/qframe-handler-influxdb/lib",
-			"revision": "1d486c84a9471e313edbb40e213b86e168c0a40c",
-			"revisionTime": "2017-04-17T09:23:00Z"
+			"revision": "e968ce8d0807ceab8a62d0996fa5420146f43af5",
+			"revisionTime": "2017-04-18T13:09:55Z"
 		},
 		{
-			"checksumSHA1": "X9LmltCsbHEm5uHCmHlDHpy4yJU=",
+			"checksumSHA1": "CdzTPFJJ1XsOL+oTAFL98KMV23U=",
 			"path": "github.com/qnib/qframe-types",
-			"revision": "d032002c2e6121fda283b3fc8a557d18f17842b3",
-			"revisionTime": "2017-04-15T10:52:28Z"
+			"revision": "7c44cada202b10638c48a083c3ae07c8ead04b40",
+			"revisionTime": "2017-04-20T10:58:05Z"
 		},
 		{
 			"checksumSHA1": "bJK9UvRZUUZDGJ8zbF7oLZFNsNo=",
@@ -127,24 +95,6 @@
 		{
 			"path": "github.com/zpatrick/go-config",
 			"revision": ""
-		},
-		{
-			"checksumSHA1": "ArDa4bMPKzhiS1I7iioemBwZ6tE=",
-			"path": "golang.org/x/sys/unix",
-			"revision": "f3918c30c5c2cb527c0b071a27c35120a6c0719a",
-			"revisionTime": "2017-04-05T16:58:12Z"
-		},
-		{
-			"checksumSHA1": "eIhF+hmL/XZhzTiAwhLD0M65vlY=",
-			"path": "gopkg.in/fsnotify.v1",
-			"revision": "629574ca2a5df945712d3079857300b5e4da0236",
-			"revisionTime": "2016-10-11T02:33:12Z"
-		},
-		{
-			"checksumSHA1": "TO8baX+t1Qs7EmOYth80MkbKzFo=",
-			"path": "gopkg.in/tomb.v1",
-			"revision": "dd632973f1e7218eb1089048e0798ec9ae7dceb8",
-			"revisionTime": "2014-10-24T13:56:13Z"
 		},
 		{
 			"checksumSHA1": "fALlQNY1fM99NesfLJ50KguWsio=",

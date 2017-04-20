@@ -30,7 +30,6 @@ services:
      - 4242:4242
      - 8083:8083
      - 8086:8086
-
   frontend:
     image: qnib/plain-grafana4
     ports:
@@ -39,3 +38,7 @@ services:
      - QCOLLECT_HOST=http://qwatch_influxdb:8086
     volumes:
       - ./resources/grafana/sql/:/opt/grafana/sql
+  qwatch:
+    image: qnib/qwatch-static
+    ports:
+      - "12201:12201/udp"
