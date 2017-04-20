@@ -29,6 +29,9 @@ import (
 	//"github.com/qnib/qframe-collector-file/lib"
 	"github.com/qnib/qframe-collector-gelf/lib"
 	"github.com/qnib/qframe-handler-influxdb/lib"
+	//"github.com/qnib/qframe-handler-log/lib"
+
+	"github.com/qnib/qframe-handler-log/lib"
 )
 
 
@@ -59,6 +62,8 @@ func Run(ctx *cli.Context) {
 	go hEsLog.Run()
 	hi, _ := qframe_handler_influxdb.New(qChan, *cfg, "influxdb")
 	go hi.Run()
+	//hl := qframe_handler_log.New(qChan, *cfg, "log")
+	//go hl.Run()
 	//// Filters
 	fg, _ := qframe_filter_grok.New(qChan, *cfg, "log")
 	go fg.Run()

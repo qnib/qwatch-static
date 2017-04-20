@@ -1,7 +1,7 @@
 #!/bin/bash
 
-log=23
-event=42
+log=7
+event=13
 
 while [ true ];do
 	r=$((${RANDOM}%5000))

@@ -69,6 +69,12 @@
 			"revisionTime": "2017-04-18T13:09:55Z"
 		},
 		{
+			"checksumSHA1": "uSKXWgHYF7FIzfmOMoFDGWbartc=",
+			"path": "github.com/qnib/qframe-handler-log/lib",
+			"revision": "35ac6b562d7bddf4d4c98fe1241e150cf5c0d93f",
+			"revisionTime": "2017-04-12T12:28:43Z"
+		},
+		{
 			"checksumSHA1": "CdzTPFJJ1XsOL+oTAFL98KMV23U=",
 			"path": "github.com/qnib/qframe-types",
 			"revision": "7c44cada202b10638c48a083c3ae07c8ead04b40",

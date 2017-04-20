@@ -32,3 +32,5 @@ handler:
     database: "qcollect"
     precision: "s"
     host: "172.17.0.1"
+  log:
+    inputs: "log,event,metric"
