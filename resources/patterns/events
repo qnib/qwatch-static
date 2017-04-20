@@ -1,0 +1,2 @@
+# Structured log which is cee formated -> NOT WORKING YET :/
+CEELOG cee%{GREEDYDATA:event_json}

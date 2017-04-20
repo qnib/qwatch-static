@@ -103,7 +103,7 @@ func main() {
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "config",
-			Value: "qwatch.yml",
+			Value: "/etc/qwatch.yml",
 			Usage: "Config file, will overwrite flag default if present.",
 		},
 	}

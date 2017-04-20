@@ -11,4 +11,5 @@ RUN apt-get update \
  && apt-get purge -y wget \
  && rm -rf /usr/local/bin/go-github
 COPY resources/qwatch-container.yml /etc/qwatch.yml
+COPY resources/patterns/* /etc/qwatch/patterns/
 CMD ["qwatch", "--config", "/etc/qwatch.yml"]

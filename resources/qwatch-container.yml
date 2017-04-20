@@ -13,7 +13,7 @@ collector:
 filter:
   metric:
     inputs: "gelf"
-    pattern: "put %{WORD:name} %{POSINT:time} %{BASE10NUM:value}( %{GREEDYDATA:tags})?"
+    pattern: "%{OPENTSDB}"
   event:
     inputs: "metric"
     source-success: false
