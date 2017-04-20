@@ -99,7 +99,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "qwatch-static"
 	app.Usage = "Statically compiled ETL framework for logs/events"
-	app.Version = "0.2.1"
+	app.Version = "0.2.2"
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "config",
